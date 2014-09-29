@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+ 
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Your First JavaScript Mission</h1>
+      
+      </div>
+    </div>
+    
+    	
+    
+    
+    
+    <div class="container">
+     <h2>Introduction</h2>
+
+<p>Sudoku is a number-placing puzzle played on 9x9 board.  It is 
+described in the Wikipedia article
+<a href="http://en.wikipedia.org/wiki/Sudoku">http://en.wikipedia.org/wiki/Sudoku</a>.  This assignment is based on creating and manipulating Sudokus.
+</p>
+<p>For each of the questions below, hand in 
+<ul>
+   <li>an implementation</li>
+   <li>documentation of the class and each method</li>
+   <li>the output</li>
+</ul>
+</p>
+
+<h2>Question 1. The Sudoku Class (30 points)</h2>
+<p>
+Create a class called <tt>Sudoku</tt> that has 
+<ul>
+	<li>an <tt>int</tt> field <tt>N</tt>, initialized to 3, and</li>
+	<li>an <tt>int[][]</tt> field named <tt>board</tt> that will be initialized as <tt>new int[N*N][N*N]</tt>.
+</ul>
+Each array element <tt>board[i][j]</tt> will either contain an integer between 1 and 9, inclusive, to represent a square with a number in it, or will contain 0, indicating an empty square.
+</p>
+<p>
+The constructor 
+<ul><li><tt>
+Sudoku();
+</tt></ti></ul>
+should initialize <tt>board</tt> to be an array
+of size <tt>N*N</tt> (i.e. 9) in which each element is an array of size <tt>N*N</tt> in which each element is initialized to 0.
+</p>
+The class should have the methods
+<ul><li><tt> void setSquare(i,j, val); // Sets board[i][j] = val.</tt></li>
+    <li><tt>int  getSquare(i,j);      // Gets the value of board[i][j] </tt></li></ul>
+<p>
+The class should also have the method 
+<ul><li><tt>
+void show();
+</tt></li></ul>
+that prints the Sudoku out using <tt>System.out.print</tt>.  A Sudoku <tt>s</tt> would be displayed by calling <tt>s.show()</tt>.   The 3x3 sub-blocks should be separated using the characters "|", "-" and "+", and empty squares should be printed with dots, not zeros.  Example:
+<pre>
+5 3 . | . 7 . | . . .
+6 . . | 1 9 5 | . . .
+. 8 9 | . . . | . 6 .
+------+-------+------
+8 . . | . 6 . | . . 3
+4 . . | 8 . 3 | . . 1
+7 . . | . 2 . | . . 6
+------+-------+------
+. 6 . | . . . | 2 8 .
+. . . | 4 1 9 | . . 5
+. . . | . 8 . | . 7 9
+</pre>
+</p>
+<p>
+Write the Sudoku class with the desired constructor and methods, show that it works with appropriate test cases, and document it properly.
+</p>
+<h2>Question 2. A Fill Function and a Nicer Fill Function (15 points)</h2>
+<p>
+Write a method 
+<ul><li><tt>
+void fill(String[] lines);
+</tt></li></ul>
+in the Sudoku class that takes an array of <tt>N*N</tt> Strings.  
+Each string represents a row and has <tt>N*N</tt> characters, each of which is either a digit or period.  Periods indicate empty squares.  For example, if N=3, then the input array will have 9 strings with 9 characters each.
+</p>
+<p>Once this works, write 
+<ul><li><tt>
+void fancyFill(String[] lines);
+</tt></li></ul>
+that additionally allows blanks and the characters "|", "-", "+".  These additional characters are ignored if they appear.   Lines made up entirely of these characters are also to be ignored.
+</p>
+<h2>Question 3. A Sudoku Verifier (15 points)</h2>
+<p>
+Write a method 
+<ul><li><tt>
+boolean isSolution();
+</tt></li></ul>
+that checks whether a Sudoku contains a valid solution.   That is, that
+<ul>
+<li>it is completely filled,</li>
+<li>each row contains each of the numbers 1 to N*N (= 9) exactly once,</li>
+<li>each column contains each of the numbers 1 to N*N exactly once,</li>
+<li>each of the NxN (3x3) blocks contains each of the numbers 1 to N*N exactly once.</li>
+</ul>
+</p>
+<h2>Question 4 [BONUS]. Big Sudoku (20 points)</h2>
+<p>Generalize your Sudoku class to work with bigger or smaller sizes.</p>
+<p>Whatever value <tt>N</tt> has, the arrays and strings should have <tt>N*N</tt> elements, taking values from 1..N*N. Test this with N=1, N=2, N=3, N=4.</p>
+<h2>Question 5 [BONUS]. Solver (40 points)</h2>
+<p>
+Add a method 
+<ul><li><tt>
+Sudoku solve();
+</tt></li></ul>
+that takes a partially filled Sudoku and constructs a correct solution, if one exists, or returns <tt>null</tt> if none exists.
+</p>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    
+</html>
