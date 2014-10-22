@@ -70,7 +70,7 @@ The constructor
 Sudoku();
 </tt></ti></ul>
 should initialize <tt>board</tt> to be an array
-of size <tt>N*N</tt> (i.e. 9) in which each element is an array of size <tt>N*N</tt> in which each element is initialized to 0.
+of size <tt>N*N</tt> (i.e. 9) in which each element is an array of size <tt>N*N</tt> in which each element is initialized to 0.  Alternatively, you can create a minimal board structure - it can be created in the fill() and fancyFill() methods.
 </p>
 The class should have the methods
 <ul><li><tt> void setSquare(i,j, val); // Sets board[i][j] = val.</tt></li>
@@ -80,7 +80,7 @@ The class should also have the method
 <ul><li><tt>
 void show();
 </tt></li></ul>
-that prints the Sudoku out using <tt>System.out.print</tt>.  A Sudoku <tt>s</tt> would be displayed by calling <tt>s.show()</tt>.   The 3x3 sub-blocks should be separated using the characters "|", "-" and "+", and empty squares should be printed with dots, not zeros.  Example:
+that prints the Sudoku out using <tt>console.out</tt>.  A Sudoku <tt>s</tt> would be displayed by calling <tt>s.show()</tt>.   The 3x3 sub-blocks should be separated using the characters "|", "-" and "+", and empty squares should be printed with dots, not zeros.  Example:
 <pre>
 5 3 . | . 7 . | . . .
 6 . . | 1 9 5 | . . .
